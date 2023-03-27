@@ -102,7 +102,7 @@ class _SelectedPageState extends State<SelectedPage> {
                                     children: [
                                       Icon(
                                         Icons.location_on,
-                                        color: Colors.white,
+                                        color: Colors.black,
                                       ),
                                       SizedBox(
                                         width: myWidth * 0.02,
@@ -110,7 +110,7 @@ class _SelectedPageState extends State<SelectedPage> {
                                       Text(
                                         widget.selectPlace!.location.toString(),
                                         style: TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                             fontSize: 22,
                                             fontWeight: FontWeight.bold),
                                       ),
@@ -123,7 +123,7 @@ class _SelectedPageState extends State<SelectedPage> {
                                 Text(
                                   widget.selectPlace!.name.toString(),
                                   style: TextStyle(
-                                      color: Colors.white,
+                                      color: Colors.black,
                                       fontSize: 29,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -133,14 +133,7 @@ class _SelectedPageState extends State<SelectedPage> {
                                 Row(
                                   children: [
                                     Container(
-                                      child: Text(
-                                        widget.selectPlace!.price.toString() +
-                                            ' \$',
-                                        style: TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 32,
-                                            fontWeight: FontWeight.bold),
-                                      ),
+
                                     ),
                                   ],
                                 )
@@ -180,144 +173,11 @@ class _SelectedPageState extends State<SelectedPage> {
                   ],
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.access_time_filled,
-                          color: Colors.grey,
-                        ),
-                        SizedBox(
-                          width: myWidth * 0.02,
-                        ),
-                        Text(
-                          'Length',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Text(
-                      widget.selectPlace!.length.toString() + " Days",
-                      style:
-                          TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.people_alt,
-                          color: Colors.grey,
-                        ),
-                        SizedBox(
-                          width: myWidth * 0.02,
-                        ),
-                        Text(
-                          'Persons',
-                          style: TextStyle(
-                              fontSize: 22, fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            if (ticket > 1) {
-                              setState(() {
-                                ticket--;
-                                totalTicketPrice = totalTicketPrice - ticketPrice;
-                              });
-                            }
-                          },
-                          child: Container(
-                            height: myHeight * 0.03,
-                            width: myWidth * 0.065,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.black),
-                            child: Icon(
-                              Icons.remove,
-                              color: Colors.white,
-                              size: 15,
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: Text(
-                            ticket.toString(),
-                            style: TextStyle(
-                                fontSize: 22, fontWeight: FontWeight.bold),
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              ticket++;
-                              totalTicketPrice = totalTicketPrice + ticketPrice;
-                            });
-                          },
-                          child: Container(
-                            height: myHeight * 0.03,
-                            width: myWidth * 0.065,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(5),
-                                color: Colors.black),
-                            child: Icon(
-                              Icons.add,
-                              color: Colors.white,
-                              size: 15,
-                            ),
-                          ),
-                        ),
-                      ],
-                    )
-                  ],
-                ),
-              ),
+
+
               Row(
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 20),
-                    child: Container(
-                      width: myWidth * 0.6,
-                      child: Stack(
-                        children: [
-                          profileItem('assets/profile/15.jpg'),
-                          Positioned(
-                            left: myWidth * 0.1,
-                            child: profileItem('assets/profile/16.jpg'),
-                          ),
-                          Positioned(
-                            left: myWidth * 0.2,
-                            child: profileItem('assets/profile/17.jpg'),
-                          ),
-                          Positioned(
-                            left: myWidth * 0.3,
-                            child: profileItem('assets/profile/18.jpg'),
-                          ),
-                          Positioned(
-                            left: myWidth * 0.4,
-                            child: moreItem(),
-                          ),
-                        ],
-                      ),
-                    ),
-                  )
+
                 ],
               ),
               Expanded(
@@ -328,27 +188,7 @@ class _SelectedPageState extends State<SelectedPage> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                         totalTicketPrice.toString() +  ' \$',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 23),
-                          ),
-                          ticket == 1 ?
-                          Text(
-                            '( ' + ticket.toString() + ' Ticket )',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
-                          ) :
-                          Text(
-                            '( ' + ticket.toString() + ' Tickets )',
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
-                          ),
-                        ],
-                      ),
+
                       Container(
                         padding:
                             EdgeInsets.symmetric(horizontal: 50, vertical: 15),
@@ -357,7 +197,7 @@ class _SelectedPageState extends State<SelectedPage> {
                           color: Colors.black,
                         ),
                         child: Text(
-                          'Book Now',
+                          'Shortest distance',
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 22,

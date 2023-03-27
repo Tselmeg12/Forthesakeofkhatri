@@ -69,7 +69,7 @@ class TravelItem extends StatelessWidget {
                         Text(
                           item![index].name.toString(),
                           style: TextStyle(
-                              color: Colors.white,
+                              color: Colors.black,
                               fontSize: 29,
                               fontWeight: FontWeight.bold),
                         ),
@@ -77,7 +77,7 @@ class TravelItem extends StatelessWidget {
                           children: [
                             Icon(
                               Icons.location_on,
-                              color: Colors.white,
+                              color: Colors.black,
                             ),
                             SizedBox(
                               width: myWidth * 0.02,
@@ -85,7 +85,7 @@ class TravelItem extends StatelessWidget {
                             Text(
                               item![index].location.toString(),
                               style: TextStyle(
-                                  color: Colors.white,
+                                  color: Colors.black,
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold),
                             ),
@@ -96,13 +96,7 @@ class TravelItem extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Text(
-                              "Starting at",
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 22,
-                                  fontWeight: FontWeight.bold),
-                            ),
+
                             SizedBox(
                               width: myWidth * 0.03,
                             ),
@@ -115,13 +109,7 @@ class TravelItem extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.white.withOpacity(0.2),
                               ),
-                              child: Text(
-                                item![index].price.toString() + ' \$',
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 22,
-                                    fontWeight: FontWeight.bold),
-                              ),
+
                             ),
                           ],
                         )
